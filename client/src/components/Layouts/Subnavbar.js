@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout, Menu, Breadcrumb } from 'antd';
-import { Input } from 'antd';
+import { Input, Popover } from 'antd';
 import { AudioOutlined, DownOutlined } from '@ant-design/icons';
 
 const Navbar = () => {
@@ -13,6 +13,12 @@ const Navbar = () => {
       }}
     />
   );
+  const content = (
+    <div>
+      <p>Content</p>
+      <p>Content</p>
+    </div>
+  )
   return (
     <div>
       <div className="header">
@@ -25,24 +31,27 @@ const Navbar = () => {
             defaultSelectedKeys={['2']}
           >
             <Menu.Item style={{ float: 'left' }} key="3">
-              NEWS
-              <DownOutlined style={{ marginLeft: '5px', fontSize: '10px' }} />
+              <Popover content={content} title="Title" >
+                NEWS
+                <DownOutlined style={{ marginLeft: '5px', fontSize: '10px' }} />
+              </Popover>
+
             </Menu.Item>
             <Menu.Item style={{ float: 'left' }} key="4">
               JOBS
-              <DownOutlined style={{ marginLeft: '5px', fontSize: '10px' }} />
+
             </Menu.Item>
             <Menu.Item style={{ float: 'left' }} key="5">
               COMPANIES
-              <DownOutlined style={{ marginLeft: '5px', fontSize: '10px' }} />
+
             </Menu.Item>
             <Menu.Item style={{ float: 'left' }} key="6">
               EVENT
-              <DownOutlined style={{ marginLeft: '5px', fontSize: '10px' }} />
+
             </Menu.Item>
             <Menu.Item style={{ float: 'left' }} key="7">
               ABOUT
-              <DownOutlined style={{ marginLeft: '5px', fontSize: '10px' }} />
+
             </Menu.Item>
             <Menu.Item
               style={{

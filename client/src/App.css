@@ -140,6 +140,61 @@
   padding: 30px;
 }
 
+/* NewsPage */
+
+
+.newsPage-container {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 58%;
+  margin-top:100px;
+}
+.title-news{
+  line-height: 20px;
+  font-size: 15px;
+  margin-top:12px
+}
+/* 
+News Aticle */
+.container-news-article {
+  width: 58%;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+/* .title-news-article{
+  margin-top:-209px;
+  padding-left:12px;
+  
+} */
+.title-news-article h1 {
+  color: black!important;
+}
+
+/* jobs home */
+.container-home-job{
+  width: 63%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background-color: white !important;
+}
+.site-badge-count-4 .ant-badge-count{
+  background-color: #fff;
+  color: #999;
+  box-shadow: 0 0 0 1px #d9d9d9 inset;
+}
+.site-calendar-demo-card{
+  margin-top:30px;
+  /* background-color: white;s */
+}
+.site-layout-background{
+  background-color: white;
+}
+.Card-jobs{
+padding:4px !important;
+}
+/* .ant-picker-calendar-header{
+  display: none;
+} */
 /* Responsive webpage */
 
 @media only screen and (max-width: 479px) {

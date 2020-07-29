@@ -62,7 +62,7 @@ const Home = () => {
                     <Card className="Card">
                       <div
                         className="Card-internal-syle"
-                        // style={{ display: 'flex' }}
+                      // style={{ display: 'flex' }}
                       >
                         <img
                           style={{ height: '105px', width: '190px' }}
