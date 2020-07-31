@@ -2,6 +2,7 @@ import React from 'react';
 import { Layout, Menu, Breadcrumb } from 'antd';
 import { Input, Popover } from 'antd';
 import { AudioOutlined, DownOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const { Search } = Input;
@@ -38,15 +39,19 @@ const Navbar = () => {
 
             </Menu.Item>
             <Menu.Item style={{ float: 'left' }} key="4">
-              JOBS
-
+              <Link to="/jobs">
+                JOBS
+              </Link>
             </Menu.Item>
             <Menu.Item style={{ float: 'left' }} key="5">
-              COMPANIES
-
+              <Link to="/companies">
+                COMPANIES
+              </Link>
             </Menu.Item>
             <Menu.Item style={{ float: 'left' }} key="6">
-              EVENT
+              <Link to="/event">
+                EVENT
+              </Link>
 
             </Menu.Item>
             <Menu.Item style={{ float: 'left' }} key="7">

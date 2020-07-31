@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import Navbar from '../Layouts/Navbar'
 import SubNavbar from '../Layouts/Subnavbar'
+import Footer from '../Layouts/Footer'
 import { Layout, Menu, Breadcrumb, Calendar, Card, List, Badge, Select, Radio, Col, Row, Typography } from 'antd';
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
+import RightSiteJob from './RightSiteJob';
 
 
 const { SubMenu } = Menu;
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 const HomeJobs = () => {
     const onPanelChange = (value, mode) => {
         console.log(value, mode)
@@ -33,15 +35,17 @@ const HomeJobs = () => {
                 <Content style={{ padding: " 0 50px" }}>
                     <Breadcrumb style={{ margin: '16px 0' }}>
                         <Breadcrumb.Item>Home</Breadcrumb.Item>
-                        <Breadcrumb.Item>List</Breadcrumb.Item>
-                        <Breadcrumb.Item>App</Breadcrumb.Item>
+                        <Breadcrumb.Item>Gategory</Breadcrumb.Item>
+                        <Breadcrumb.Item>Jobs</Breadcrumb.Item>
                     </Breadcrumb>
+                    {/* <h1 style={{ paddingLeft: "324px" }}>Lastest Jobs</h1>
+                    <hr style={{ width: "400px" }}></hr> */}
 
                     <Layout style={{ padding: '24px 0', backgroundColor: "white" }}>
                         <Sider className="site-layout-background" width={300}>
 
-                            <div className="site-card-border-less-wrapper">
-                                <Card title="Job Category" style={{ width: 300 }}>
+                            <div className="site-card-border-less-wrapper " >
+                                <Card title="Job Category" style={{ width: 300, border: "1px solid rgba(4, 47, 130, 0.3)" }}>
                                     <List
                                         itemLayout="horizontal"
                                         dataSource={data}
@@ -145,10 +149,19 @@ const HomeJobs = () => {
                             </div>
 
                         </Sider>
-                        <Content style={{ padding: '0 24px', minHeight: 280 }}>Content</Content>
+                        <Content style={{ padding: '0 24px', minHeight: 280, overflowX: "visible" }}>
+                            <div className="content-job">
+                                <h1>Lastest Job</h1>
+                            </div>
+                            <div style={{ marginTop: "30px " }}>
+
+                                <RightSiteJob />
+                            </div>
+                        </Content>
                     </Layout>
                 </Content>
             </Layout>
+            <Footer />
         </React.Fragment>
     )
 }

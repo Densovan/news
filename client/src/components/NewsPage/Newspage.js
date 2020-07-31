@@ -98,7 +98,7 @@ const Newspage = () => {
                         {NewsData.news.map((res, index) => {
                             return (
                                 <Col lg={12} md={12} key={index}>
-                                    <Link to={"/news/" + res.id}>
+                                    <Link to={"/news/" + res._id}>
                                         <img style={{ maxWidth: "100%" }} src={res.img} />
                                         <h1 className="title-news">{res.titile}</h1>
                                         <div style={{ display: "flex" }}>

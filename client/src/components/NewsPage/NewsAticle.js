@@ -7,7 +7,7 @@ import Footer from '../Layouts/Footer'
 
 const NewsAticle = (props) => {
     console.log(props.match.params.id)
-    const newss = NewsData.news.find(x => x._id === props.match.params.id);
+    const newss = NewsData.news.find(x => x._id == props.match.params.id);
     // console.log(news.date)
     return (
         <React.Fragment>
