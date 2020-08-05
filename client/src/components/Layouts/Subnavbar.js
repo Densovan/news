@@ -1,87 +1,135 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Layout, Menu, Breadcrumb } from 'antd';
-import { Input, Popover } from 'antd';
-import { AudioOutlined, DownOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+import { Input, Popover, Drawer, Button, Radio, Space } from 'antd';
+import { AudioOutlined, DownOutlined, MenuOutlined } from '@ant-design/icons';
+import { NavLink, NavNavLNavLink } from 'react-router-dom';
 
 const Navbar = () => {
+  const [state, setState] = useState({
+    visible: false,
+    // placement: 'left',
+  });
+
+  const showDrawer = () => {
+    setState({
+      visible: true,
+    });
+  };
+  const onClose = () => {
+    setState({
+      visible: false,
+    });
+  };
+
   const { Search } = Input;
-  const suffix = (
-    <AudioOutlined
-      style={{
-        fontSize: 16,
-        color: '#1890ff',
-      }}
-    />
-  );
+
   const content = (
-    <div>
-      <p>Content</p>
-      <p>Content</p>
+    <div style={{ cursor: 'pointer' }}>
+      <p>Sport</p>
+      <p>Social</p>
+      <p>Science</p>
     </div>
-  )
+  );
   return (
-    <div>
-      <div className="header">
-        {/* <div className="logo" /> */}
-        <div>
-          <Menu
-            style={{ paddingLeft: '20%', paddingRight: '20%' }}
-            theme="light"
-            mode="horizontal"
-            defaultSelectedKeys={['2']}
-          >
-            <Menu.Item style={{ float: 'left' }} key="3">
-              <Popover content={content} title="Title" >
-                NEWS
-                <DownOutlined style={{ marginLeft: '5px', fontSize: '10px' }} />
-              </Popover>
-
-            </Menu.Item>
-            <Menu.Item style={{ float: 'left' }} key="4">
-              <Link to="/jobs">
-                JOBS
-              </Link>
-            </Menu.Item>
-            <Menu.Item style={{ float: 'left' }} key="5">
-              <Link to="/companies">
-                COMPANIES
-              </Link>
-            </Menu.Item>
-            <Menu.Item style={{ float: 'left' }} key="6">
-              <Link to="/event">
-                EVENT
-              </Link>
-
-            </Menu.Item>
-            <Menu.Item style={{ float: 'left' }} key="7">
-              ABOUT
-
-            </Menu.Item>
-            <Menu.Item
-              style={{
-                float: 'right',
-                hover: 'none',
-                border: 'none',
-                background: 'none',
-                cursor: 'none',
-              }}
+    <React.Fragment>
+      <div className="subNavbar">
+        <div className="header">
+          {/* <div className="logo" /> */}
+          <div>
+            <Menu
+              style={{ paddingLeft: '20%', paddingRight: '20%' }}
+              theme="light"
+              mode="horizontal"
+              defaultSelectedKeys={['2']}
             >
-              <Search
-                placeholder="input search text"
-                onSearch={(value) => console.log(value)}
+              <Menu.Item style={{ float: 'left' }} key="0">
+                <Popover content={content}>
+                  NEWS
+                  <DownOutlined
+                    style={{ marginLeft: '5px', fontSize: '10px' }}
+                  />
+                </Popover>
+              </Menu.Item>
+              <Menu.Item active={{ color: 'red' }} style={{ float: 'left' }}>
+                <NavLink activeClassName="main-nav-active " to="/jobs">
+                  JOBS
+                </NavLink>
+              </Menu.Item>
+              <Menu.Item style={{ float: 'left' }}>
+                <NavLink activeClassName="main-nav-active " to="/companies">
+                  COMPANIES
+                </NavLink>
+              </Menu.Item>
+              <Menu.Item style={{ float: 'left' }}>
+                <NavLink to="/event">EVENT</NavLink>
+              </Menu.Item>
+              <Menu.Item
+                activeClassName="main-nav-active "
+                style={{ float: 'left' }}
+              >
+                <NavLink to="/event">ABOUT</NavLink>
+              </Menu.Item>
+              <Menu.Item
                 style={{
-                  width: 200,
-                  //   float: 'right',
-                  borderRadius: '22px',
-                  margin: 'auto',
+                  float: 'right',
+                  hover: 'none',
+                  border: 'none',
+                  background: 'none',
+                  cursor: 'none',
                 }}
-              />
-            </Menu.Item>
-          </Menu>
+              >
+                <Search
+                  placeholder="input search text"
+                  onSearch={(value) => console.log(value)}
+                  style={{
+                    width: 200,
+                    //   float: 'right',
+                    borderRadius: '22px',
+                    margin: 'auto',
+                  }}
+                />
+              </Menu.Item>
+            </Menu>
+          </div>
         </div>
       </div>
-    </div>
+
+      {/* Mobile tablet navbar */}
+      <div className=" mobile-navbar">
+        <Menu
+          // className="mobile-navbar-menu"
+          // style={{ paddingLeft: '20%', paddingRight: '20%' }}
+          theme="light"
+          mode="horizontal"
+        >
+          <Menu.Item onClick={showDrawer}>
+            <MenuOutlined />
+          </Menu.Item>
+        </Menu>
+      </div>
+      <Drawer
+        placement="left"
+        closable={false}
+        onClose={onClose}
+        visible={state.visible}
+        key={state.placement}
+      >
+        <div>
+          <p>Login</p>
+          <p>Sign Up</p>
+          <p>
+            <Popover content={content}>
+              NEWS
+              <DownOutlined style={{ marginLeft: '5px', fontSize: '10px' }} />
+            </Popover>
+          </p>
+          <p>JOBS</p>
+          <p>COMPANIES</p>
+          <p>EVENT</p>
+          <p>ABOUT</p>
+        </div>
+      </Drawer>
+    </React.Fragment>
   );
 };
 

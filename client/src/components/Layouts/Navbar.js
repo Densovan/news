@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Layout, Menu, Breadcrumb } from 'antd';
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="navbar">
       <div className="header">
         {/* <div className="logo" /> */}
         <div>
@@ -15,15 +16,14 @@ const Navbar = () => {
             mode="horizontal"
             defaultSelectedKeys={['2']}
           >
-            <Menu.Item style={{ float: 'left' }} key="3">
-              Logo
+            <Menu.Item style={{ float: 'left' }}>
+              <Link to="/home">
+                <img style={{ height: '40px' }} src="/img/Koompi-Black.png" />
+                {/* logo */}
+              </Link>
             </Menu.Item>
-            <Menu.Item style={{ float: 'right' }} key="1">
-              Login
-            </Menu.Item>
-            <Menu.Item style={{ float: 'right' }} key="2">
-              Sign Up
-            </Menu.Item>
+            <Menu.Item style={{ float: 'right' }}>Login</Menu.Item>
+            <Menu.Item style={{ float: 'right' }}>Sign Up</Menu.Item>
           </Menu>
         </div>
       </div>

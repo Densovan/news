@@ -1,12 +1,12 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const morgan = require('morgan');
-const colors = require('colors');
+const express = require("express");
+const dotenv = require("dotenv");
+const morgan = require("morgan");
+const colors = require("colors");
 
-const connectDB = require('./config/db');
+const connectDB = require("./config/db");
 
 //Route file
-const user = require('./routes/auth');
+// const user = require('./routes/auth');
 
 //Conect to Database
 connectDB();
@@ -16,14 +16,14 @@ const app = express();
 app.use(express.json());
 
 //Laod env vars
-dotenv.config({ path: './config/config.env' });
+dotenv.config({ path: "./config/config.env" });
 
 //Dev logging middleware
-if (process.env.NODE_ENV === 'development') {
-  app.use(morgan('dev'));
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
 }
 //Mount Route
-app.use('/api/v1/auth', user);
+// app.use('/api/v1/auth', user);
 
 const PORT = process.env.PORT || 8080;
 

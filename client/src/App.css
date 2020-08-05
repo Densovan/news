@@ -49,6 +49,31 @@
   margin-left: auto;
   max-width: 65%;
 } */
+.main-nav-active {
+  color: #1890ff !important;
+}
+.main-nav-actiove:hover {
+  color: blue !important;
+}
+/* .ant-menu-horizontal > .ant-menu-item:hover,
+.ant-menu-horizontal > .ant-menu-submenu:hover,
+.ant-menu-horizontal > .ant-menu-item-active,
+.ant-menu-horizontal > .ant-menu-submenu-active,
+.ant-menu-horizontal > .ant-menu-item-open,
+.ant-menu-horizontal > .ant-menu-submenu-open,
+.ant-menu-horizontal > .ant-menu-item-selected,
+.ant-menu-horizontal > .ant-menu-submenu-selected {
+  border-bottom: none;
+} */
+
+.ant-menu-horizontal > .ant-menu-item-selected {
+  color: black;
+  border: none;
+}
+.mobile-navbar-menu {
+  padding-left: 20%;
+  padding-right: 20%;
+}
 .Card {
   /* position: absolute; */
   /* max-width: 420px; */
@@ -86,6 +111,9 @@
 
   color: #797878;
 }
+.margin-home-page {
+  margin-top: 150px;
+}
 .paragraph1-of-card {
   /* font-family: Reem Kufi; */
   font-style: normal;
@@ -101,7 +129,7 @@
   margin-top: 45px;
 }
 .image-popular {
-  width: 350px;
+  width: 431px;
   /* height: 155px; */
   left: 301px;
   top: 2560px;
@@ -142,17 +170,28 @@
 
 /* NewsPage */
 
-
+.image-news-style {
+  max-width: 100%;
+  /* height: 194px; */
+  /* height: 46% !important; */
+}
 .newsPage-container {
   margin-left: auto !important;
   margin-right: auto !important;
   width: 58%;
-  margin-top:100px;
+  margin-top: 100px;
+  /* padding-left: 0;
+  padding-right: 30px; */
 }
-.title-news{
+.title-news {
   line-height: 20px;
   font-size: 15px;
-  margin-top:12px
+  margin-top: 12px;
+}
+.container-popular-news {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60%;
 }
 /* 
 News Aticle */
@@ -161,93 +200,104 @@ News Aticle */
   margin-right: auto !important;
   margin-left: auto !important;
 }
-/* .title-news-article{
-  margin-top:-209px;
-  padding-left:12px;
-  
-} */
+
 .title-news-article h1 {
-  color: black!important;
+  color: black !important;
 }
 
 /* jobs home */
-.container-home-job{
-  width: 63%;
+/* .padding-calender {
+  padding: 0 !important;
+} */
+.container-home-job {
+  width: 58%;
   margin-left: auto !important;
   margin-right: auto !important;
   background-color: white !important;
 }
-.site-badge-count-4 .ant-badge-count{
+.site-badge-count-4 .ant-badge-count {
   background-color: #fff;
   color: #999;
   box-shadow: 0 0 0 1px #d9d9d9 inset;
 }
-.site-calendar-demo-card{
-  margin-top:30px;
+.site-calendar-demo-card {
+  margin-top: 30px;
   /* background-color: white;s */
 }
-.site-layout-background{
+.site-layout-background {
   background-color: white;
 }
-.Card-jobs{
-padding:4px !important;
+.Card-jobs {
+  padding: 4px !important;
 }
-.content-job{
-margin-top: -34px;
-border-bottom:  1px solid rgba(4, 47, 130, 0.3);
+.job-detail-padding {
+  padding-left: 180px;
 }
-.content-job h1{
-  color:#042F82;
+.content-job {
+  margin-top: -34px;
+  border-bottom: 1px solid rgba(4, 47, 130, 0.3);
+}
+.content-job h1 {
+  color: #042f82;
 }
 .container-job-detial {
-  width:58%;
+  width: 58%;
   margin-left: auto;
   margin-right: auto;
-  margin-top:40px;
+  margin-top: 40px;
 }
-
-
+.rigth-site-job {
+  padding-left: 400px;
+}
 
 /* Company page */
+.righ-site-company-style {
+  padding-left: 12px;
+  display: flex;
+}
 
 .container-company {
-  width:58%;
-  margin-left:auto;
+  width: 58%;
+  margin-left: auto;
   margin-right: auto;
 }
-.banner-company img{
-  background-image: url("/img/company.jpg");
+.banner-company img {
+  background-image: url('/img/company.jpg');
   background-size: cover;
   max-width: 100%;
   height: 90vh;
   overflow: hidden;
 }
-.position-work-company{
-  margin-top:-300px;
+.position-work-company {
+  margin-top: -300px;
+}
+.display-company-home {
+  margin-top: 60px;
+  display: flex;
 }
 
 /* Event Page */
 .container-event {
-  width:58%;
-  margin-left:auto;
+  width: 58%;
+  margin-left: auto;
   margin-right: auto;
 }
-.background-banner-event{
-  background-color: #F0F4F5;
+.background-banner-event {
+  background-color: #f0f4f5;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.middle-describe-event{
-  background-color: #2A4267;
-  margin-top:40px;
+.middle-describe-event {
+  background-color: #2a4267;
+  margin-top: 40px;
   overflow: hidden;
   /* width: 781px; */
-height: 279px;
+  height: 279px;
 }
 .middle-describe-event h1 {
-top: 519px !important;
-margin-top: 100px;
-color:#FAFAFA;
-text-align: center;
+  top: 519px !important;
+  margin-top: 100px;
+  color: #fafafa;
+  text-align: center;
 }
 
 /* Responsive webpage */
@@ -257,7 +307,74 @@ text-align: center;
     display: block;
   }
 }
+@media only screen and (max-width: 988px) {
+  /* .padding-menu-news {
+    padding-right: 0 !important;
+  } */
+  .padding-menu-news {
+    width: 60% !important;
+  }
+  .column-reverse {
+    flex-direction: column-reverse;
+  }
+  .popular {
+    display: block;
+  }
+}
 @media only screen and (max-width: 768px) {
+  .padding-menu-news {
+    width: 90% !important;
+    justify-content: center;
+  }
+  .container-news-article {
+    width: 90% !important;
+  }
+  .footer-container {
+    width: 90% !important;
+  }
+  /* .mobile-navbar-menu {
+    padding-left: 10px !important;
+  } */
+  .righ-site-company-style {
+    padding-left: 0px;
+    /* display: flex; */
+  }
+  .container-company {
+    width: 90%;
+  }
+  .display-company-home {
+    display: block;
+  }
+  .display-company-home-img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .padding-calender {
+    /* padding: 0 !important; */
+    display: none;
+  }
+  .container-job-detial {
+    width: 90%;
+  }
+  .job-detail-padding {
+    padding-left: 10px;
+  }
+  .container-home-job {
+    width: 90%;
+  }
+  .margin-home-page {
+    margin-top: 30px;
+  }
+  .hr {
+    margin-top: 30px;
+  }
+  .banner-news {
+    display: none;
+  }
+  .news-col {
+    padding: 0 !important;
+    margin-top: 20px;
+  }
   .popular {
     display: block !important;
   }
@@ -274,8 +391,37 @@ text-align: center;
     margin-left: -31px;
   }
 }
+@media only screen and (max-width: 576px) {
+  /* .news-col {
+    padding: 0 !important;
+  } */
+  .container {
+    max-width: none !important;
+  }
+  .container-popular-news {
+    max-width: 77%;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .rigth-site-job {
+    padding-left: 0;
+  }
+}
 @media only screen and (min-width: 995px) and (max-width: 1300px) {
   .Card-internal-syle {
     display: block !important;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .navbar {
+    display: none;
+  }
+  .subNavbar {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .mobile-navbar {
+    display: none;
   }
 }

@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,24 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.background-content-dashboard {
+  background-color: #fff !important;
+  padding: 44px;
+  margin: 60px;
+  border-radius: 10px;
+}
+.quill {
+  height: 60vh !important;
+}
+.all-label {
+  font-size: 24px !important;
+  margin-bottom: -30px !important;
+}
+.event-select {
+  width: 100% !important;
+}
+.title-top {
+  font-size: 32px;
 }

@@ -1,46 +1,197 @@
-import React, { useState } from 'react'
-import Navbar from '../Layouts/Navbar'
-import SubNavbar from '../Layouts/Subnavbar'
-import Footer from '../Layouts/Footer'
-import { Layout, Menu, Breadcrumb, Calendar, Card, List, Badge, Select, Radio, Col, Row, Typography } from 'antd';
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
-import RightSiteJob from './RightSiteJob';
-
+import React, { useState } from "react";
+import Navbar from "../Layouts/Navbar";
+import SubNavbar from "../Layouts/Subnavbar";
+import Footer from "../Layouts/Footer";
+// import { Col, Row } from "antd";
+import {
+  Layout,
+  Menu,
+  Breadcrumb,
+  Calendar,
+  Card,
+  List,
+  Badge,
+  Select,
+  Radio,
+  Col,
+  Row,
+  Typography,
+} from "antd";
+import {
+  UserOutlined,
+  LaptopOutlined,
+  NotificationOutlined,
+} from "@ant-design/icons";
+import RightSiteJob from "./RightSiteJob";
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 const HomeJobs = () => {
-    const onPanelChange = (value, mode) => {
-        console.log(value, mode)
-    }
-    const data = [
-        {
-            title: 'Ant Design Title 1',
-        },
-        {
-            title: 'Ant Design Title 2',
-        },
-        {
-            title: 'Ant Design Title 3',
-        },
-        {
-            title: 'Ant Design Title 4',
-        },
-    ];
-    return (
-        <React.Fragment>
-            <Navbar />
-            <SubNavbar />
-            <Layout className="container-home-job">
+  const onPanelChange = (value, mode) => {
+    console.log(value, mode);
+  };
+  const data = [
+    {
+      title: "Ant Design Title 1",
+    },
+    {
+      title: "Ant Design Title 2",
+    },
+    {
+      title: "Ant Design Title 3",
+    },
+    {
+      title: "Ant Design Title 4",
+    },
+  ];
+  return (
+    <React.Fragment>
+      <Navbar />
+      <SubNavbar />
+      <div className="container-home-job">
+        <Breadcrumb style={{ margin: "16px 0" }}>
+          <Breadcrumb.Item>Home</Breadcrumb.Item>
+          <Breadcrumb.Item>Gategory</Breadcrumb.Item>
+          <Breadcrumb.Item>Jobs</Breadcrumb.Item>
+        </Breadcrumb>
+        <Row gutter={[32, 16]}>
+          <Col className="padding-calender" sm={24} md={24} lg={8}>
+            <div className="site-card-border-less-wrapper ">
+              <Card
+                title="Job Category"
+                style={{
+                  //   width: 300,
+                  border: "1px solid rgba(4, 47, 130, 0.3)",
+                }}
+              >
+                <List
+                  itemLayout="horizontal"
+                  dataSource={data}
+                  renderItem={(item) => (
+                    <List.Item>
+                      <List.Item.Meta
+                        title={
+                          <h4 style={{ color: "rgba(0, 0, 0, 0.5)" }}>
+                            {item.title}
+                          </h4>
+                        }
+                      />
+                      <div>
+                        <Badge count={40} className="site-badge-count-4" />
+                      </div>
+                    </List.Item>
+                  )}
+                />
+              </Card>
+            </div>
+            <div className="site-calendar-demo-card">
+              <div
+                className="site-calendar-customize-header-wrapper "
+                style={{
+                  border: "1px solid rgba(4, 47, 130, 0.3)",
+                  //   width: 100,
+                }}
+              >
+                <Calendar
+                  //   style={{ width: "auto" }}
+                  fullscreen={false}
+                  headerRender={({ value, type, onChange, onTypeChange }) => {
+                    const start = 0;
+                    const end = 12;
+                    const monthOptions = [];
+
+                    const current = value.clone();
+                    const localeData = value.localeData();
+                    const months = [];
+                    for (let i = 0; i < 12; i++) {
+                      current.month(i);
+                      months.push(localeData.monthsShort(current));
+                    }
+
+                    for (let index = start; index < end; index++) {
+                      monthOptions.push(
+                        <Select.Option className="month-item" key={`${index}`}>
+                          {months[index]}
+                        </Select.Option>
+                      );
+                    }
+                    const month = value.month();
+
+                    const year = value.year();
+                    const options = [];
+                    for (let i = year - 10; i < year + 10; i += 1) {
+                      options.push(
+                        <Select.Option key={i} value={i} className="year-item">
+                          {i}
+                        </Select.Option>
+                      );
+                    }
+                    return (
+                      <div style={{ padding: 8, width: 400 }}>
+                        <Typography.Title level={4}>
+                          Custom header
+                        </Typography.Title>
+                        <Row gutter={8}>
+                          <Col>
+                            <Radio.Group
+                              size="small"
+                              onChange={(e) => onTypeChange(e.target.value)}
+                              value={type}
+                            >
+                              <Radio.Button value="month">Month</Radio.Button>
+                              <Radio.Button value="year">Year</Radio.Button>
+                            </Radio.Group>
+                          </Col>
+                          <Col>
+                            <Select
+                              size="small"
+                              dropdownMatchSelectWidth={false}
+                              className="my-year-select"
+                              onChange={(newYear) => {
+                                const now = value.clone().year(newYear);
+                                onChange(now);
+                              }}
+                              value={String(year)}
+                            >
+                              {options}
+                            </Select>
+                          </Col>
+                          <Col>
+                            <Select
+                              size="small"
+                              dropdownMatchSelectWidth={false}
+                              value={String(month)}
+                              onChange={(selectedMonth) => {
+                                const newValue = value.clone();
+                                newValue.month(parseInt(selectedMonth, 10));
+                                onChange(newValue);
+                              }}
+                            >
+                              {monthOptions}
+                            </Select>
+                          </Col>
+                        </Row>
+                      </div>
+                    );
+                  }}
+                  onPanelChange={onPanelChange}
+                />
+              </div>
+            </div>
+          </Col>
+          <Col sm={24} md={24} lg={16}>
+            <RightSiteJob />
+          </Col>
+        </Row>
+      </div>
+      {/* <Layout className="container-home-job">
                 <Content style={{ padding: " 0 50px" }}>
                     <Breadcrumb style={{ margin: '16px 0' }}>
                         <Breadcrumb.Item>Home</Breadcrumb.Item>
                         <Breadcrumb.Item>Gategory</Breadcrumb.Item>
                         <Breadcrumb.Item>Jobs</Breadcrumb.Item>
                     </Breadcrumb>
-                    {/* <h1 style={{ paddingLeft: "324px" }}>Lastest Jobs</h1>
-                    <hr style={{ width: "400px" }}></hr> */}
-
+                   
                     <Layout style={{ padding: '24px 0', backgroundColor: "white" }}>
                         <Sider className="site-layout-background" width={300}>
 
@@ -62,8 +213,7 @@ const HomeJobs = () => {
                             </div>
 
                             <div className="site-calendar-demo-card">
-                                {/* <Card className="Card-jobs" style={{ width: 300 }}> */}
-                                {/* <Calendar fullscreen={false} onPanelChange={onPanelChange} /> */}
+                                
                                 <div className="site-calendar-customize-header-wrapper " style={{ border: "1px solid rgba(4, 47, 130, 0.3)" }}>
                                     <Calendar
                                         fullscreen={false}
@@ -145,7 +295,7 @@ const HomeJobs = () => {
                                         onPanelChange={onPanelChange}
                                     />
                                 </div>
-                                {/* </Card> */}
+                                
                             </div>
 
                         </Sider>
@@ -160,10 +310,10 @@ const HomeJobs = () => {
                         </Content>
                     </Layout>
                 </Content>
-            </Layout>
-            <Footer />
-        </React.Fragment>
-    )
-}
+            </Layout> */}
+      <Footer />
+    </React.Fragment>
+  );
+};
 
-export default HomeJobs
+export default HomeJobs;
