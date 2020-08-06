@@ -41,7 +41,9 @@ const LeftNavbar = () => {
           </SubMenu>
           <SubMenu key="3" icon={<PieChartOutlined />} title="News Page">
             <Menu.Item>All News</Menu.Item>
-            <Menu.Item>Add News</Menu.Item>
+            <Menu.Item>
+              <NavLink to="/admin/addnewspage">Add News</NavLink>
+            </Menu.Item>
           </SubMenu>
           <SubMenu key="4" icon={<PieChartOutlined />} title="Jobs Page">
             <Menu.Item>All Jobs</Menu.Item>

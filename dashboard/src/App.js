@@ -7,6 +7,8 @@ import AllNews from './Components/Page/Homepage/AllNews';
 import AddNews from './Components/Page/Homepage/AddNews';
 import AllPopularNews from './Components/Page/PopularNews.js/AllPopularNews';
 import AddPopularNews from './Components/Page/PopularNews.js/AddPopularNews';
+import AddNewspage from './Components/Page/Newspage/AddNewspage';
+import AllNewspage from './Components/Page/Newspage/AllNewspage';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
             path="/admin/addpopularnews"
             component={AddPopularNews}
           />
+          <Route exact path="/admin/addnewspage" component={AddNewspage} />
+          <Route exact path="/admin/allnews" component={AllNewspage} />
         </Switch>
       </Router>
     </React.Fragment>

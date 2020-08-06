@@ -56,3 +56,14 @@
 .title-top {
   font-size: 32px;
 }
+/* .button-submit {
+  background-image: linear-gradient(
+    to right,
+    #77a1d3 0%,
+    #79cbca 51%,
+    #77a1d3 100%
+  ) !important;
+}
+.button-submit:hover {
+  background-position: right center !important;
+} */

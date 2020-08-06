@@ -1,13 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Avatar, Tag, List } from "antd";
-import JobData from "../data/JobData";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Avatar, Tag, List } from 'antd';
+import JobData from '../data/JobData';
 import {
   DollarCircleTwoTone,
   DollarOutlined,
   CalendarOutlined,
   AimOutlined,
-} from "@ant-design/icons";
+} from '@ant-design/icons';
 
 const RightSiteJob = () => {
   return (
@@ -15,28 +15,28 @@ const RightSiteJob = () => {
       {JobData.job.map((res, index) => {
         return (
           <div>
-            <div style={{ display: "flex" }}>
-              <Link to={"/jobs/" + res._id}>
-                <div style={{ marginBottom: "27px" }}>
+            <div style={{ display: 'flex' }}>
+              <Link to={'/jobs/' + res._id}>
+                <div style={{ marginBottom: '27px' }}>
                   <Avatar shape="square" size={100} src={res.img} />
                 </div>
               </Link>
-              <Link to={"/jobs/" + res._id}>
-                <div style={{ display: " flex", paddingLeft: "20px" }}>
+              <Link to={'/jobs/' + res._id}>
+                <div style={{ display: ' flex', paddingLeft: '20px' }}>
                   <div>
                     <h3>{res.job}</h3>
                     <span>
-                      <AimOutlined style={{ paddingRight: "3px" }} />
+                      <AimOutlined style={{ paddingRight: '3px' }} />
                       {res.location}
                     </span>
                     <br></br>
                     <span>
-                      <DollarOutlined style={{ paddingRight: "3px" }} />
+                      <DollarOutlined style={{ paddingRight: '3px' }} />
                       {res.salary}
                     </span>
                     <br></br>
                     <span>
-                      <CalendarOutlined style={{ paddingRight: "3px" }} />
+                      <CalendarOutlined style={{ paddingRight: '3px' }} />
                       {res.Schedule}
                     </span>
                   </div>
@@ -52,27 +52,10 @@ const RightSiteJob = () => {
                 </div>
               </Link>
             </div>
-            <hr style={{ border: "1px solid rgba(196, 196, 196, 0.5)" }}></hr>
+            <hr style={{ border: '1px solid rgba(196, 196, 196, 0.5)' }}></hr>
           </div>
         );
       })}
-      {/* <List
-                itemLayout="horizontal"
-                dataSource={JobData.job}
-                renderItem={item => (
-                    <List.Item>
-                        <List.Item.Meta avatar={<Avatar shape="square" size={100} src={item.img} />}
-                            title={item.job}
-                            description={item.location}
-                        // h1={item.salary}
-                        >
-                            he
-                        </List.Item.Meta>
-
-                    </List.Item>
-                )}
-            >
-            </List> */}
     </div>
   );
 };

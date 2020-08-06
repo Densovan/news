@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Layout, Menu, Breadcrumb } from 'antd';
-import { Input, Popover, Drawer, Button, Radio, Space } from 'antd';
+import { Input, Popover, Drawer, Button, Radio, Space, Affix } from 'antd';
 import { AudioOutlined, DownOutlined, MenuOutlined } from '@ant-design/icons';
 import { NavLink, NavNavLNavLink } from 'react-router-dom';
 
@@ -35,7 +35,7 @@ const Navbar = () => {
       <div className="subNavbar">
         <div className="header">
           {/* <div className="logo" /> */}
-          <div>
+          <Affix>
             <Menu
               style={{ paddingLeft: '20%', paddingRight: '20%' }}
               theme="light"
@@ -90,45 +90,47 @@ const Navbar = () => {
                 />
               </Menu.Item>
             </Menu>
-          </div>
+          </Affix>
         </div>
       </div>
 
       {/* Mobile tablet navbar */}
-      <div className=" mobile-navbar">
-        <Menu
-          // className="mobile-navbar-menu"
-          // style={{ paddingLeft: '20%', paddingRight: '20%' }}
-          theme="light"
-          mode="horizontal"
-        >
-          <Menu.Item onClick={showDrawer}>
-            <MenuOutlined />
-          </Menu.Item>
-        </Menu>
-      </div>
-      <Drawer
-        placement="left"
-        closable={false}
-        onClose={onClose}
-        visible={state.visible}
-        key={state.placement}
-      >
-        <div>
-          <p>Login</p>
-          <p>Sign Up</p>
-          <p>
-            <Popover content={content}>
-              NEWS
-              <DownOutlined style={{ marginLeft: '5px', fontSize: '10px' }} />
-            </Popover>
-          </p>
-          <p>JOBS</p>
-          <p>COMPANIES</p>
-          <p>EVENT</p>
-          <p>ABOUT</p>
+      <Affix>
+        <div className=" mobile-navbar">
+          <Menu
+            // className="mobile-navbar-menu"
+            // style={{ paddingLeft: '20%', paddingRight: '20%' }}
+            theme="light"
+            mode="horizontal"
+          >
+            <Menu.Item onClick={showDrawer}>
+              <MenuOutlined />
+            </Menu.Item>
+          </Menu>
         </div>
-      </Drawer>
+        <Drawer
+          placement="left"
+          closable={false}
+          onClose={onClose}
+          visible={state.visible}
+          key={state.placement}
+        >
+          <div>
+            <p>Login</p>
+            <p>Sign Up</p>
+            <p>
+              <Popover content={content}>
+                NEWS
+                <DownOutlined style={{ marginLeft: '5px', fontSize: '10px' }} />
+              </Popover>
+            </p>
+            <p>JOBS</p>
+            <p>COMPANIES</p>
+            <p>EVENT</p>
+            <p>ABOUT</p>
+          </div>
+        </Drawer>
+      </Affix>
     </React.Fragment>
   );
 };

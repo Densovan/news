@@ -10,11 +10,11 @@ const UserSchema = new mongoose.Schema({
     required: [true, 'Please add an email'],
     unique: true,
   },
-  role: {
-    type: String,
-    enum: ['user', 'admin'],
-    default: 'user',
-  },
+  // role: {
+  //   type: String,
+  //   enum: ['user', 'admin'],
+  //   default: 'user',
+  // },
   password: {
     type: String,
     required: [true, 'please add a password'],
