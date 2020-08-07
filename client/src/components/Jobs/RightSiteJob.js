@@ -15,15 +15,18 @@ const RightSiteJob = () => {
       {JobData.job.map((res, index) => {
         return (
           <div>
-            <div style={{ display: 'flex' }}>
+            <div className="display-rigth-site-job">
               <Link to={'/jobs/' + res._id}>
                 <div style={{ marginBottom: '27px' }}>
                   <Avatar shape="square" size={100} src={res.img} />
                 </div>
               </Link>
               <Link to={'/jobs/' + res._id}>
-                <div style={{ display: ' flex', paddingLeft: '20px' }}>
-                  <div>
+                <div
+                  className="job-rigth-site"
+                  style={{ display: ' flex', paddingLeft: '20px' }}
+                >
+                  <div className="describe-opunity-job">
                     <h3>{res.job}</h3>
                     <span>
                       <AimOutlined style={{ paddingRight: '3px' }} />
@@ -40,10 +43,7 @@ const RightSiteJob = () => {
                       {res.Schedule}
                     </span>
                   </div>
-                  <div
-                    className="rigth-site-job"
-                    // style={{ paddingLeft: "400px" }}
-                  >
+                  <div className="rigth-site-job">
                     <Tag color="default">featured</Tag>
                     <br></br>
                     <br></br>
@@ -52,7 +52,10 @@ const RightSiteJob = () => {
                 </div>
               </Link>
             </div>
-            <hr style={{ border: '1px solid rgba(196, 196, 196, 0.5)' }}></hr>
+            <hr
+              className="hr-job"
+              style={{ border: '1px solid rgba(196, 196, 196, 0.5)' }}
+            ></hr>
           </div>
         );
       })}

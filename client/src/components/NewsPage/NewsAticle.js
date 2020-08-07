@@ -38,7 +38,7 @@ const NewsAticle = (props) => {
           </Card>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </React.Fragment>
   );
 };

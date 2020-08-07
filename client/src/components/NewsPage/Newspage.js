@@ -35,49 +35,6 @@ const Newspage = () => {
           </div>
         </Carousel>
       </div>
-      {/* <div className="banner-news">
-        <Row gutter={[12, 0]} className="newsPage-container ">
-          <Col style={{ paddingLeft: '0px' }} span={12}>
-            <img
-              style={{ maxWidth: '100%' }}
-              src="/img/news.png"
-              alt="news-img"
-            />
-          </Col>
-          <Col span={12}>
-            <Row gutter={[12, 0]}>
-              <Col span={12}>
-                <Row gutter={[12, 12]}>
-                  <Col span={24}>
-                    <img
-                      style={{ maxWidth: '100%' }}
-                      src="/img/news.png"
-                      alt="news-image"
-                    />
-                  </Col>
-                  <Col span={24}>
-                    <img
-                      style={{ maxWidth: '100%' }}
-                      src="/img/news.png"
-                      alt="news-image"
-                    />
-                  </Col>
-                </Row>
-              </Col>
-              <Col span={12}>
-                <Row gutter={[12, 12]}>
-                  <Col span={24}>
-                    <img style={{ maxWidth: '100%' }} src="/img/news.png" />
-                  </Col>
-                  <Col span={24}>
-                    <img style={{ maxWidth: '100%' }} src="/img/news.png" />
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </div> */}
 
       {/* Menu news */}
 
@@ -114,7 +71,7 @@ const Newspage = () => {
           <RightSiteNewspage />
         </Col>
       </Row>
-      <Footer />
+      {/* <Footer /> */}
     </React.Fragment>
   );
 };

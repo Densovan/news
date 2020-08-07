@@ -4,19 +4,19 @@ import { Avatar, Card, Input, Tag, Affix } from 'antd';
 const RightSiteNewspage = () => {
   const [des, setDes] = useState([
     {
-      avatar: '/img/Den.png',
+      avatar: '/img/jobsuche_blue.jpg',
       des: ' The fall of an ecommerce startup and other top stories this week',
     },
     {
-      avatar: '/img/Den.png',
+      avatar: '/img/jobsuche_blue.jpg',
       des: ' The fall of an ecommerce startup and other top stories this week',
     },
     {
-      avatar: '/img/Den.png',
+      avatar: '/img/jobsuche_blue.jpg',
       des: ' The fall of an ecommerce startup and other top stories this week',
     },
     {
-      avatar: '/img/Den.png',
+      avatar: '/img/jobsuche_blue.jpg',
       des: ' The fall of an ecommerce startup and other top stories this week',
     },
   ]);
@@ -71,7 +71,10 @@ const RightSiteNewspage = () => {
 
         {/* Subscribe box */}
         <div style={{ marginTop: '30px' }}>
-          <Card style={{ width: 300, backgroundColor: ' #275178' }}>
+          <Card
+            className="subscribe-box"
+            style={{ width: 300, backgroundColor: ' #275178' }}
+          >
             <h1 style={{ color: '#FFFFFF' }}>Subscribe</h1>
             <span style={{ color: '#FFFFFF' }}>
               Get all latest content delivered to your email a few times a

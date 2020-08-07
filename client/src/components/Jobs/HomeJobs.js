@@ -55,7 +55,7 @@ const HomeJobs = () => {
           <Breadcrumb.Item>Jobs</Breadcrumb.Item>
         </Breadcrumb>
         <Row gutter={[32, 16]}>
-          <Col className="padding-calender" sm={24} md={24} lg={8}>
+          <Col className="padding-calender" sm={24} md={10} lg={8}>
             <div className="site-card-border-less-wrapper ">
               <Card
                 title="Job Category"
@@ -90,10 +90,10 @@ const HomeJobs = () => {
                 style={{
                   border: '1px solid rgba(4, 47, 130, 0.3)',
                   //   width: 100,
+                  // width: 159,
                 }}
               >
                 <Calendar
-                  //   style={{ width: "auto" }}
                   fullscreen={false}
                   headerRender={({ value, type, onChange, onTypeChange }) => {
                     const start = 0;
@@ -179,12 +179,12 @@ const HomeJobs = () => {
               </div>
             </div>
           </Col>
-          <Col sm={24} md={24} lg={16}>
+          <Col sm={24} md={14} lg={16}>
             <RightSiteJob />
           </Col>
         </Row>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </React.Fragment>
   );
 };

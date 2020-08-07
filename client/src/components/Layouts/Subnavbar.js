@@ -25,9 +25,15 @@ const Navbar = () => {
 
   const content = (
     <div style={{ cursor: 'pointer' }}>
-      <p>Sport</p>
-      <p>Social</p>
-      <p>Science</p>
+      <p>
+        <NavLink to="/news">Sport</NavLink>
+      </p>
+      <p>
+        <NavLink to="/news">Social</NavLink>
+      </p>
+      <p>
+        <NavLink to="/news">Science</NavLink>
+      </p>
     </div>
   );
   return (
@@ -37,6 +43,7 @@ const Navbar = () => {
           {/* <div className="logo" /> */}
           <Affix>
             <Menu
+              className="submenu-style-color"
               style={{ paddingLeft: '20%', paddingRight: '20%' }}
               theme="light"
               mode="horizontal"
@@ -61,7 +68,9 @@ const Navbar = () => {
                 </NavLink>
               </Menu.Item>
               <Menu.Item style={{ float: 'left' }}>
-                <NavLink to="/event">EVENT</NavLink>
+                <NavLink activeClassName="main-nav-active " to="/event">
+                  EVENT
+                </NavLink>
               </Menu.Item>
               <Menu.Item
                 activeClassName="main-nav-active "
@@ -115,18 +124,30 @@ const Navbar = () => {
           visible={state.visible}
           key={state.placement}
         >
-          <div>
+          <div className="mobile-navbar-color">
             <p>Login</p>
             <p>Sign Up</p>
             <p>
-              <Popover content={content}>
+              <Popover placement="bottom" content={content}>
                 NEWS
                 <DownOutlined style={{ marginLeft: '5px', fontSize: '10px' }} />
               </Popover>
             </p>
-            <p>JOBS</p>
-            <p>COMPANIES</p>
-            <p>EVENT</p>
+            <p>
+              <NavLink activeClassName="main-nav-active " to="/jobs">
+                JOBS
+              </NavLink>
+            </p>
+            <p>
+              <NavLink activeClassName="main-nav-active " to="/companies">
+                COMPANIES
+              </NavLink>
+            </p>
+            <p>
+              <NavLink activeClassName="main-nav-active " to="/event">
+                EVENT
+              </NavLink>
+            </p>
             <p>ABOUT</p>
           </div>
         </Drawer>

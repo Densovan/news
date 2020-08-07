@@ -50,14 +50,26 @@ body h1 {
 .main-nav-actiove:hover {
   color: blue !important;
 }
+.ant-menu-horizontal > .ant-menu-item a {
+  color: rgb(39, 81, 120);
+}
 
 .ant-menu-horizontal > .ant-menu-item-selected {
   color: black;
   border: none;
 }
+.submenu-style-color {
+  color: rgb(39, 81, 120) !important;
+}
 .mobile-navbar-menu {
   padding-left: 20%;
   padding-right: 20%;
+}
+.mobile-navbar-color p a {
+  color: rgb(39, 81, 120) !important;
+}
+.mobile-navbar-color p {
+  color: rgb(39, 81, 120) !important;
 }
 .Card {
   /* position: absolute; */
@@ -140,17 +152,27 @@ body h1 {
   display: flex;
 }
 .footer {
-  background-color: rgba(0, 0, 0, 0.84);
+  background-color: rgb(39, 81, 120);
   margin-top: 50px;
+  height: 200px;
 }
 .footer-container {
   margin-left: auto !important;
   margin-right: auto !important;
   width: 66%;
-  padding: 30px;
+  /* padding: 30px; */
 }
+/* .input-footer {
+  width: 650px;
+} */
 
 /* NewsPage */
+.subscribe-box {
+  width: auto !important;
+}
+.padding-calender {
+  padding: 0% !important;
+}
 
 .Card-news-article {
   box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.05) !important;
@@ -187,7 +209,7 @@ body h1 {
   max-width: 60%;
 }
 .padding-menu-news {
-  width: 60%;
+  width: 58%;
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -218,9 +240,9 @@ News Aticle */
 }
 
 /* jobs home */
-/* .padding-calender {
-  padding: 0 !important;
-} */
+.describe-opunity-job span {
+  color: #797878 !important;
+}
 .container-home-job {
   width: 58%;
   margin-left: auto !important;
@@ -261,8 +283,15 @@ News Aticle */
 .rigth-site-job {
   padding-left: 400px;
 }
+.display-rigth-site-job {
+  display: flex;
+}
 
 /* Company page */
+/* .describe-opunity-company {
+  color: #797878 !important;
+  font-size: 16px;
+} */
 .righ-site-company-style {
   padding-left: 12px;
   display: flex;
@@ -300,19 +329,37 @@ News Aticle */
 }
 .middle-describe-event {
   background-color: #2a4267;
-  margin-top: 40px;
+  /* margin-top: 40px; */
   overflow: hidden;
   /* width: 781px; */
-  height: 279px;
+  height: 500px;
+  padding: 13em 0px;
+}
+.middle-describe-event h4 {
+  color: #fafafa;
+  text-align: center;
+  font-size: 18px;
 }
 .middle-describe-event h1 {
   top: 519px !important;
-  margin-top: 100px;
+  /* margin-top: 100px; */
   color: #fafafa;
   text-align: center;
+  font-size: 66px;
 }
 
 /* Responsive webpage */
+@media only screen and (max-width: 431px) {
+  .job-rigth-site {
+    padding: 0px !important;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .middle-describe-event h1 {
+    font-size: 44px;
+  }
+}
 
 @media only screen and (max-width: 479px) {
   .Card-internal-syle {
@@ -339,6 +386,9 @@ News Aticle */
   }
 }
 @media only screen and (max-width: 768px) {
+  .middle-describe-event {
+    padding: 8em 0px;
+  }
   .right-site-job-detail {
     display: none;
   }
@@ -367,12 +417,11 @@ News Aticle */
   }
   .display-company-home-img {
     width: 100% !important;
-    height: 100% !important;
+    /* height: 100% !important; */
   }
-  .padding-calender {
-    /* padding: 0 !important; */
-    display: none;
-  }
+  /* .avartar-company {
+    height: 0 !important;
+  } */
   .container-job-detial {
     width: 90%;
   }
@@ -411,6 +460,18 @@ News Aticle */
     margin-left: -31px;
   }
 }
+@media only screen and (max-width: 431px) {
+  .display-rigth-site-job {
+    display: block !important;
+  }
+  .hr-job {
+    width: 380px;
+  }
+  /* .rigth-site-job {
+    padding-left: 104px !important;
+  } */
+}
+
 @media only screen and (max-width: 576px) {
   /* .news-col {
     padding: 0 !important;
@@ -422,9 +483,14 @@ News Aticle */
     max-width: 90%;
   }
 }
+@media only screen and (max-width: 660px) {
+  /* .rigth-site-job {
+    padding-left: 100px !important;
+  } */
+}
 @media only screen and (max-width: 991px) {
   .rigth-site-job {
-    padding-left: 0;
+    padding-left: 148px !important;
   }
 }
 @media only screen and (min-width: 995px) and (max-width: 1300px) {
@@ -433,6 +499,18 @@ News Aticle */
   }
 }
 @media only screen and (max-width: 1024px) {
+  .container-event {
+    width: 90%;
+  }
+  .container-company {
+    width: 90% !important;
+  }
+  .rigth-site-job {
+    padding-left: 283px;
+  }
+  .container-home-job {
+    width: 90%;
+  }
   .container-job-detial {
     width: 90%;
   }
