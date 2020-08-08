@@ -184,7 +184,7 @@ const HomeJobs = () => {
           </Col>
         </Row>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </React.Fragment>
   );
 };

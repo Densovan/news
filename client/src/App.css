@@ -160,6 +160,7 @@ body h1 {
   margin-left: auto !important;
   margin-right: auto !important;
   width: 66%;
+  overflow: hidden;
   /* padding: 30px; */
 }
 /* .input-footer {
